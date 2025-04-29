@@ -39,7 +39,7 @@ Partition and mount the drives using [disko](https://github.com/nix-community/di
 ```bash
 DISK='/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi0'
 
-curl https://raw.githubusercontent.com/notthebee/nix-config/main/disko/zfs-root/default.nix \
+curl https://raw.githubusercontent.com/edouardkleinhans/nix-config/main/disko/zfs-root/default.nix \
     -o /tmp/disko.nix
 sed -i "s|to-be-filled-during-installation|$DISK|" /tmp/disko.nix
 nix --experimental-features "nix-command flakes" run github:nix-community/disko \
