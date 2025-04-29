@@ -57,7 +57,7 @@ Clone this repository
 
 ```bash
 mkdir -p /mnt/etc/nixos
-git clone https://github.com/notthebee/nix-config.git /mnt/etc/nixos
+git clone https://github.com/edouardkleinhans/nix-config.git /mnt/etc/nixos
 ```
 
 Put the private and GPG key into place (required for secret management)
