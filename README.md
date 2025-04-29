@@ -17,8 +17,8 @@ From your host, copy the public SSH key to the server
 
 ```bash
 export NIXOS_HOST=192.168.2.xxx
-ssh-add ~/.ssh/notthebee
-ssh-copy-id -i ~/.ssh/notthebee root@$NIXOS_HOST
+ssh-add ~/.ssh/ekleinhans
+ssh-copy-id -i ~/.ssh/ekleinhans root@$NIXOS_HOST
 ```
 
 SSH into the host with agent forwarding enabled (for the secrets repo access)
@@ -63,13 +63,13 @@ git clone https://github.com/edouardkleinhans/nix-config.git /mnt/etc/nixos
 Put the private and GPG key into place (required for secret management)
 
 ```bash
-mkdir -p /mnt/home/notthebee/.ssh
+mkdir -p /mnt/home/ekleinhans/.ssh
 exit
-scp ~/.ssh/notthebee root@$NIXOS_HOST:/mnt/home/notthebee/.ssh
-scp ~/.ssh/git-crypt-nix root@$NIXOS_HOST:/mnt/home/notthebee/.ssh
+scp ~/.ssh/ekleinhans root@$NIXOS_HOST:/mnt/home/ekleinhans/.ssh
+scp ~/.ssh/git-crypt-nix root@$NIXOS_HOST:/mnt/home/ekleinhans/.ssh
 ssh root@$NIXOS_HOST
-chmod 700 /mnt/home/notthebee/.ssh
-chmod 600 /mnt/home/notthebee/.ssh/*
+chmod 700 /mnt/home/ekleinhans/.ssh
+chmod 600 /mnt/home/ekleinhans/.ssh/*
 ```
 
 Unlock the git-crypt vault
@@ -77,7 +77,7 @@ Unlock the git-crypt vault
 ```bash
 cd /mnt/etc/nixos
 chown -R root:root .
-git-crypt unlock /mnt/home/notthebee/.ssh/git-crypt-nix
+git-crypt unlock /mnt/home/ekleinhans/.ssh/git-crypt-nix
 ```
 
 Install the system
