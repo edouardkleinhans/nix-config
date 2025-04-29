@@ -37,8 +37,7 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 Partition and mount the drives using [disko](https://github.com/nix-community/disko)
 
 ```bash
-DISK='/dev/disk/by-id/ata-Samsung_SSD_870_EVO_250GB_S6PENL0T902873K'
-DISK2='/dev/disk/by-id/ata-Samsung_SSD_870_EVO_250GB_S6PE58S586SAER'
+DISK='/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi0'
 
 curl https://raw.githubusercontent.com/notthebee/nix-config/main/disko/zfs-root/default.nix \
     -o /tmp/disko.nix
